@@ -88,11 +88,3 @@ void FlagsEditor::setValue(quint64 value) {
 quint64 FlagsEditor::value() const {
 	return value_;
 }
-
-#include <QApplication>
-int main(int argc, char *argv[]) {
-	QApplication app(argc, argv);
-	FlagsEditor w;
-	w.show();
-	return app.exec();
-}

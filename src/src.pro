@@ -22,6 +22,7 @@ TRANSLATIONS += \
 HEADERS += \
 	API.h \
 	ArchProcessor.h \
+	FlagsEditor.h \
 	ArchTypes.h \
 	BasicBlock.h \
 	BinaryString.h \
@@ -43,6 +44,7 @@ HEADERS += \
 	DialogOptions.h \
 	DialogPlugins.h \
 	DialogAbout.h \
+	ClickableLabel.h \
 	DialogThreads.h \
 	Expression.h \
 	FixedFontSelector.h \
@@ -106,7 +108,8 @@ FORMS += \
 	DialogPlugins.ui \
 	DialogThreads.ui \
 	DialogAbout.ui \
-	FixedFontSelector.ui
+	FixedFontSelector.ui \
+	FlagsEditor.ui \
 
 SOURCES += \
 	ArchProcessor.cpp \
@@ -114,6 +117,7 @@ SOURCES += \
 	BinaryString.cpp \
 	ByteShiftArray.cpp \
 	CommentServer.cpp \
+	FlagsEditor.cpp \
 	Configuration.cpp \
 	DataViewInfo.cpp \
 	Debugger.cpp \
@@ -129,6 +133,7 @@ SOURCES += \
 	DialogOptions.cpp \
 	DialogPlugins.cpp \
 	DialogAbout.cpp \
+	ClickableLabel.cpp \
 	DialogThreads.cpp \
 	FixedFontSelector.cpp \
 	Float80Edit.cpp \

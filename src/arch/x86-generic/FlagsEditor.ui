@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>107</width>
-    <height>24</height>
+    <width>188</width>
+    <height>28</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,6 +16,18 @@
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
     <widget class="ClickableLabel" name="labelC">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>16</width>
+       <height>0</height>
+      </size>
+     </property>
      <property name="mouseTracking">
       <bool>true</bool>
      </property>
@@ -32,6 +44,18 @@
    </item>
    <item>
     <widget class="ClickableLabel" name="labelP">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>16</width>
+       <height>0</height>
+      </size>
+     </property>
      <property name="mouseTracking">
       <bool>true</bool>
      </property>
@@ -48,6 +72,18 @@
    </item>
    <item>
     <widget class="ClickableLabel" name="labelA">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>16</width>
+       <height>0</height>
+      </size>
+     </property>
      <property name="mouseTracking">
       <bool>true</bool>
      </property>
@@ -64,6 +100,18 @@
    </item>
    <item>
     <widget class="ClickableLabel" name="labelZ">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>16</width>
+       <height>0</height>
+      </size>
+     </property>
      <property name="mouseTracking">
       <bool>true</bool>
      </property>
@@ -80,6 +128,18 @@
    </item>
    <item>
     <widget class="ClickableLabel" name="labelS">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>16</width>
+       <height>0</height>
+      </size>
+     </property>
      <property name="mouseTracking">
       <bool>true</bool>
      </property>
@@ -96,6 +156,18 @@
    </item>
    <item>
     <widget class="ClickableLabel" name="labelT">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>16</width>
+       <height>0</height>
+      </size>
+     </property>
      <property name="mouseTracking">
       <bool>true</bool>
      </property>
@@ -112,6 +184,18 @@
    </item>
    <item>
     <widget class="ClickableLabel" name="labelI">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>16</width>
+       <height>0</height>
+      </size>
+     </property>
      <property name="mouseTracking">
       <bool>true</bool>
      </property>
@@ -128,6 +212,18 @@
    </item>
    <item>
     <widget class="ClickableLabel" name="labelD">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>16</width>
+       <height>0</height>
+      </size>
+     </property>
      <property name="mouseTracking">
       <bool>true</bool>
      </property>
@@ -145,10 +241,16 @@
    <item>
     <widget class="ClickableLabel" name="labelO">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>16</width>
+       <height>0</height>
+      </size>
      </property>
      <property name="mouseTracking">
       <bool>true</bool>
@@ -163,6 +265,19 @@
       <set>Qt::NoTextInteraction</set>
      </property>
     </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>1</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>

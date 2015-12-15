@@ -26,6 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "Util.h"
 #include "edb.h"
 #include "string_hash.h"
+#include "FlagsEditor.h"
 
 #include <QApplication>
 #include <QDebug>
@@ -795,7 +796,7 @@ void analyze_syscall(const State &state, const edb::Instruction &inst, QStringLi
 // Name: ArchProcessor
 // Desc:
 //------------------------------------------------------------------------------
-ArchProcessor::ArchProcessor() : split_flags_(0) {
+ArchProcessor::ArchProcessor() : flags_editor_(0), split_flags_(0) {
 	if(edb::v1::debugger_core) {
 		has_mmx_ = edb::v1::debugger_core->has_extension(edb::string_hash("MMX"));
 		has_xmm_ = edb::v1::debugger_core->has_extension(edb::string_hash("XMM"));
@@ -829,8 +830,14 @@ void ArchProcessor::setup_register_view(RegisterListWidget *category_list) {
 			register_view_items_.push_back(create_register_item(gpr, "rFLAGS"));
 
 			// split [ER]FLAGS view
-			split_flags_ = new QTreeWidgetItem(register_view_items_.back());
-			split_flags_->setText(0, state.flags_to_string(0));
+			split_flags_  = new QTreeWidgetItem(register_view_items_.back());
+			flags_editor_ = new FlagsEditor(category_list);
+			
+			connect(flags_editor_, SIGNAL(valueChanged(quint64)), this, SLOT(flagsValueChanged(quint64)));
+			
+			//flags_editor_->setAutoFillBackground(true);
+			
+			category_list->setItemWidget(split_flags_, 0, flags_editor_);
 		}
 
 		if(QTreeWidgetItem *const segs = category_list->addCategory(tr("Segments"))) {
@@ -1215,7 +1222,7 @@ void ArchProcessor::update_register_view(const QString &default_region_name, con
 	Register flagsPrev=last_state_.flags_register();
 	const bool flags_changed = flags != flagsPrev;
 	if(flags_changed) {
-		split_flags_->setText(0, state.flags_to_string());
+		flags_editor_->setValue(flags.valueAsInteger());
 	}
 
 	register_view_items_[itemNumber]->setText(0, QString("%0: %1").arg(flags.name().toUpper()).arg(flags.toHexString()));
@@ -1648,4 +1655,13 @@ std::unique_ptr<QMenu> ArchProcessor::register_item_context_menu(const Register&
 	}
 
 	return nullptr;
+}
+
+void ArchProcessor::flagsValueChanged(quint64 newValue) {
+	State state;
+	edb::v1::debugger_core->get_state(&state);
+	state.set_flags(newValue);
+	edb::v1::debugger_core->set_state(state);
+	
+	update_register_view(QString(), state);
 }

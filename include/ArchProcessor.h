@@ -32,6 +32,7 @@ class QString;
 class QTreeWidgetItem;
 class RegisterListWidget;
 class State;
+class FlagsEditor;
 
 class ArchProcessor : public QObject {
 	Q_OBJECT
@@ -79,6 +80,7 @@ private:
 	QString getRoundingMode(unsigned modeBits) const;
 
 private:
+	FlagsEditor     * flags_editor_;
 	QTreeWidgetItem * split_flags_;
 	QTreeWidgetItem * fpu_exceptions_mask_;
 	QTreeWidgetItem * fpu_exceptions_active_;
@@ -113,6 +115,7 @@ private Q_SLOTS:
 	void setSSEAVXIntMode(int);
 	void setFPUDisplayMode(int);
 	void setFPUOrderMode(int);
+	void flagsValueChanged(quint64);
 };
 
 #endif
